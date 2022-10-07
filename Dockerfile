@@ -1,7 +1,8 @@
 FROM debian:buster
 LABEL maintainer="user"
 
-ARG KOS_deb="KasperskyOS-Community-Edition_1.1.0.23_amd64.deb"
+# KasperskyOS distributive name
+ARG KOS_deb="KasperskyOS-Community-Edition_1.1.0.24_en.deb"
 
 RUN apt-get update && apt-get -y install \
        sudo systemd systemd-sysv \

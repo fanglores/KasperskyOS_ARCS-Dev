@@ -75,7 +75,7 @@ int main()
     {
         if (!configure_net_iface(DEFAULT_INTERFACE, "10.0.2.10", DEFAULT_MASK, DEFAULT_GATEWAY, DEFAULT_MTU))
         {
-            
+            print("\n\n");
             print("Network interface configuration failed... Retrying in 5 seconds...", prWRN);
             sleep(5);
             
