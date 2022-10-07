@@ -1,3 +1,9 @@
+# KasperskyOS SDK
+KasperskyOS*.deb
+
+# build folders
+**/build
+
 # Prerequisites
 *.d
 
