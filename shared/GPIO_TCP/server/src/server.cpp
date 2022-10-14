@@ -71,22 +71,12 @@ int main()
     int num_tries = 5;
     print("[INIT] Staring network interface...");
     
-    for(int i = 0; i < num_tries; i++)
+    if (!configure_net_iface(DEFAULT_INTERFACE, "10.0.2.10", DEFAULT_MASK, DEFAULT_GATEWAY, DEFAULT_MTU))
     {
-        if (!configure_net_iface(DEFAULT_INTERFACE, "10.0.2.10", DEFAULT_MASK, DEFAULT_GATEWAY, DEFAULT_MTU))
-        {
-            print("\n\n");
-            print("Network interface configuration failed... Retrying in 5 seconds...", prWRN);
-            sleep(5);
-            
-            if(i >= num_tries - 1)
-            {
-                print(opFAIL);
-                print("Network interface configuration failed", prERR);
-                print("Out of tries. Terminating.", prERR);
-                return EXIT_FAILURE;
-            }
-        }
+        print("\n\n");
+        print(opFAIL);
+        print("Network interface configuration failed", prERR);
+        return EXIT_FAILURE;
     }
 
     if (!list_network_ifaces()) 
